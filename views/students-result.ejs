@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="/css/bootstrap.min.css" type="text/css" />
+  <link rel="stylesheet" href="/css/font-awesome.min.css" type="text/css" />
+  <link rel="stylesheet" href="/css/app.css" type="text/css" />
+  <style>
+    .bg-primary, .btn-primary {
+      background-color: #4c3fb5 !important;
+    }
+
+    .text-primary {
+      color: #4c3fb5 !important;
+    }
+
+    body {
+      background-image: url(/images/coat.png);
+      background-repeat: no-repeat;
+      background-size: contain;
+      background-position: center center;
+    }
+
+    #main {
+      background-color: #fffffff0;
+    }
+  </style>
+  <title><%= appname %></title>
+</head>
+<body>
+  <div class="container-fluid" id="main">
+    
+    <div class="row space pt-0">
+      <div class="col-8 offset-2 border">
+        <nav class="navbar navbar-expand-sm text-white py-0 d-flex justify-content-between align-items-center" style="border-left: 1px solid #fff;">
+          <a class="navbar-brand" href="#">
+            <img class="img img-responsive" src="/images/coat.png" style="height: 64px; width: 64px; border-radius: 50%;">
+          </a>
+          <h2 class="font-weight-normal app-title text-primary"><%= appname %>
+          </h2>
+          <p></p>
+        </nav>
+        <div class="bg-primary pb-1 mb-4"></div>
+        <div class="d-flex justify-content-between">
+          <div>
+            <div class="">
+              <strong>Student Name:</strong>
+              <p><%= student.surname + ', ' + student.first_name + ' ' + student.middle_name %></p>
+            </div>
+            <div class="">
+              <strong>Student Registration Number:</strong>
+              <p><%= student.reg_no %></p>
+            </div>
+            <div class="">
+              <strong>Institution:</strong>
+              <p><%= student.institution %></p>
+            </div>
+            <div class="">
+              <strong>Faculty:</strong>
+              <p><%= student.faculty %></p>
+            </div>
+            <div class="">
+              <strong>Department:</strong>
+              <p><%= student.department %></p>
+            </div>
+            <div class="">
+              <strong>Address:</strong>
+              <p><%= student.address %></p>
+            </div>
+            <div class="">
+              <strong>Mobile Phone:</strong>
+              <p><%= student.phone %></p>
+            </div>
+            <div class="">
+              <strong>100 Level C.G.P.A.:</strong>
+              <p><%= result.level_1_cgpa %></p>
+            </div>
+            <div class="">
+              <strong>200 Level C.G.P.A.:</strong>
+              <p><%= result.level_2_cgpa %></p>
+            </div>
+          </div>
+
+          <div>
+            <img class="img img-responsive" src='<%= "/images/" + student.photo %>' style="height: 112px; width: 92px; border-radius: 15px;">
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+<%-include ("partials/bottom") %>
